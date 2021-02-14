@@ -14,7 +14,6 @@ jobs:
           for t in "${last_tags[@]}"; do
             echo tag: $t;
           done
-          echo Test;
           changed_files=($(git diff ${last_tags[0]} ${last_tags[1]} --name-only))
           for f in "${changed_files[@]}"; do 
             filename=$(basename -- "$f");
@@ -24,4 +23,3 @@ jobs:
               echo $filename, $extension;
             fi
           done
-          echo Test;
