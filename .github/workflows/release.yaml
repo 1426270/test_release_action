@@ -18,6 +18,6 @@ jobs:
             extension="${filename##*.}";
             filename="${filename%.*}";
             if [ "$extension" == "json" ]; then
-                echo $filename, $extension;
+              echo $filename, $extension;
             fi
           done
