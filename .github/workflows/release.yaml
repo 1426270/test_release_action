@@ -8,4 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          git tag | tail -n 2
+          last_tags=($(git tag | tail -n 2))
+          changed_files=($(git diff ${last_tags[0]} ${last_tags[1]}))
+          for f in $changed_files; do echo $f; done
